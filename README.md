@@ -19,9 +19,10 @@ conda activate QAT
 bash setup.sh
 ```
 - Download data
+
 We use the question answering datasets (CommonsenseQA, OpenBookQA, and MedQA-USMLE) and their knowledge graphs.
 We preprocess the dataset following QA-GNN. 
-You can download all the preprocessed data with the link.
+You can download all the preprocessed data with the [link](https://drive.google.com/drive/folders/1CulfL6ZdpsscHivgdUDX8w4BBZiH-FAn?usp=sharing).
 
 ## Run Experiments
 ```
