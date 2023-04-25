@@ -201,8 +201,8 @@ class FullTransformer(nn.Module):
         path_idx = torch.cat(metapath_feature_count, 1).long()
         if self.add_nodefeatsim:
             flattened_node_emb = node_emb.view(-1, node_emb.size(-1)).contiguous()
-            head_feat = flattened_node_emb[edge_index[0]]
-            tail_feat = flattened_node_emb[edge_index[1]]
+            head_feat = flattened_node_emb[path_idx[0]]
+            tail_feat = flattened_node_emb[path_idx[1]]
             sim = self.node_enc(tail_feat - head_feat)
             path_embeddings = self.path_encoder(torch.cat([flattened_metapath_feature, sim], dim=1)) #[E+N, emb_dim]
         else:
